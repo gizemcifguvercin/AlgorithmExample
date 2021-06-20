@@ -40,14 +40,7 @@ namespace ConsoleAppForAlg
                     calculateModels.Add(new CalculateModel(sum, new List<int> {number}));
             }
 
-            bool countNumberValid = true;
-            foreach (var model in calculateModels)
-            {
-                if (model.numbers.Count == 1)
-                    countNumberValid = false;
-            }
-            
-            if (!countNumberValid)
+            if (calculateModels.Count == calculateModels.Count(x => x.numbers.Count == 1))
                 return -1;
 
             List<int> sums = new List<int>();
